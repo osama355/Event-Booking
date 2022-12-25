@@ -17,9 +17,9 @@ function Home() {
             <span className="text-orange-600 text-[3rem] lg:text-[4rem]"></span>
           </p>
           <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
-            Your one-stop event planning website, with all the tools you’ll
-            need to create the dream celebration. No hidden fees! No challenge
-            will have to face
+            Your one-stop event planning website, with all the tools you’ll need
+            to create the dream celebration. No hidden fees! No challenge will
+            have to face
           </p>
           <button
             type="button"
@@ -37,13 +37,12 @@ function Home() {
           />
         </div>
       </section>
-      <div className="w-full  bg-mainContainer px-7 py-7 mt-10">
+      <div className="w-full  bg-mainContainer px-7 py-7 mt-10 mb-10">
         <MainContainer />
         <br />
-        <br />
+      </div>
+      <div className="w-full px-7 mb-4">
         <hr style={{ color: "grey" }} />
-        <br />
-        <br />
       </div>
       <Footer />
     </div>

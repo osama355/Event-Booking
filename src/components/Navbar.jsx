@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Logo from "../assests/brandlogo.png";
 import Avatar from "../assests/avatar.png";
-import {MdAdd, MdLogout } from "react-icons/md";
+import { MdAdd, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // import { useStateValue } from "../context/stateProvider";
 // import { actionType } from "../context/reducer";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
+
   return (
     <header className="fixed z-50 w-screen p-3 px-4 md:p-3 md:px-7 bg-white">
       {/* desktop and tablet */}
@@ -24,14 +26,33 @@ function Navbar() {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8"
           >
-            <Link to="/" className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link
+              to="/"
+              className={`text-base hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer ${
+                location.pathname === "/" ? "border-b-4 text-btnback" : "text-textColor"
+              }`}
+            >
               Home
             </Link>
-            
-            <Link className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+
+            <Link
+              to="/about"
+              className={`text-base hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer ${
+                location.pathname === "/about"
+                  ? "border-b-4 text-btnback"
+                  : "text-textColor"
+              }`}
+            >
               About Us
             </Link>
-            <Link className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link
+              to="/services"
+              className={`text-base hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer ${
+                location.pathname === "/services"
+                  ? "border-b-4 text-btnback"
+                  : "text-textColor"
+              }`}
+            >
               Services
             </Link>
           </motion.ul>
@@ -56,7 +77,10 @@ function Navbar() {
                     New Item <MdAdd />
                   </p>
                 </Link>
-                <Link to='/login' className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
+                <Link
+                  to="/login"
+                  className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
+                >
                   SingIn <MdLogout />
                 </Link>
               </motion.div>

@@ -12,6 +12,7 @@ module.exports = {
       footer:"#2F2E41",
       mainContainer:"#ECE8EF",
       mainContainer2:"#E5E0E9",
+      textColor:'#494949',
     },
     extend: {},
   },
