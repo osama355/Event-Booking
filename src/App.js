@@ -11,7 +11,7 @@ import MiladForm from './forms/MiladForm';
 import OfficeForm from './forms/OfficeForm';
 import BirthDayForm from './forms/BirthdayForm';
 import SchoolForm from './forms/SchoolForm';
-import WeddingForm from './forms/SchoolForm';
+import WeddingForm from './forms/WeddingForm';
 import DestinationForm from './forms/DestinationWeddingForm';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         <Route path='/booking' element={<Booking/>}/>
         <Route path='/register/wedding' element={<WeddingForm/>} />
         <Route path='/register/birthday' element={<BirthDayForm/>} />
-        <Route path='/regiser/milad' element={<MiladForm/>} />
+        <Route path='/register/milad' element={<MiladForm/>} />
         <Route path='/register/official' element={<OfficeForm/>} />
         <Route path='/register/school' element={<SchoolForm/>} />
         <Route path='/register/destination' element={<DestinationForm/>} />
