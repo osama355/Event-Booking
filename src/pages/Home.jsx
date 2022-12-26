@@ -3,6 +3,7 @@ import HeroBg from "../assests/couples.svg";
 // import { heroData } from "../utils/data";
 import MainContainer from "../components/MainContainer";
 import Footer from "../components/Footer";
+import {Link} from 'react-router-dom';
 
 function Home() {
   return (
@@ -21,12 +22,14 @@ function Home() {
             to create the dream celebration. No hidden fees! No challenge will
             have to face
           </p>
-          <button
-            type="button"
-            className=" bg-btnback text-white w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
-          >
-            Book Now
-          </button>
+          <Link to="/booking">
+            <button
+              type="button"
+              className=" bg-btnback text-white w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
+            >
+              Book Now
+            </button>
+          </Link>
         </div>
         {/* p-4 */}
         <div className="py-2 px-7 flex-1 flex items-center relative">
@@ -37,7 +40,7 @@ function Home() {
           />
         </div>
       </section>
-      <div className="w-full  bg-mainContainer px-7 py-7 mt-10 mb-10">
+      <div className="w-full px-7 py-7 mt-10 mb-10">
         <MainContainer />
         <br />
       </div>

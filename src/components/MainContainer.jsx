@@ -6,8 +6,8 @@ import { AiOutlineCloud } from "react-icons/ai";
 function MainContainer() {
   return (
     <div className="container">
-      <div className="flex md:flex-row flex-col md:justify-between w-full">
-        <div className="md:w-1/3 w-full flex flex-col text-center px-4">
+      <div className="flex md:flex-row flex-col md:justify-between w-full gap-5">
+        <div className="md:w-1/3 w-full bg-mainContainer2 flex flex-col text-center p-8">
           <RiTeamLine className="text-5xl text-btnback w-full" />
           <h2 className="font-bold mt-3 mb-3">Plan Together</h2>
           <p>
@@ -19,7 +19,7 @@ function MainContainer() {
             planner tools.
           </p>
         </div>
-        <div className="md:w-1/3 w-full flex flex-col text-center px-4">
+        <div className="md:w-1/3 w-full flex bg-mainContainer2 flex-col text-center p-8">
           <GiHeadbandKnot className="text-5xl text-btnback w-full" />
           <h2 className="font-bold mt-3 mb-3">Online Events Tools</h2>
           <p>
@@ -30,7 +30,7 @@ function MainContainer() {
             timeline template to guarantee your celebrations run smoothly.
           </p>
         </div>
-        <div className="md:w-1/3 w-full flex flex-col text-center px-4">
+        <div className="md:w-1/3 w-full flex bg-mainContainer2 flex-col text-center p-8">
           <AiOutlineCloud className="text-5xl text-btnback w-full" />
           <h2 className="font-bold mt-3 mb-3">Stored Safely</h2>
           <p>
