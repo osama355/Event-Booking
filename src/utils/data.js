@@ -126,7 +126,7 @@ export const categories=[
     },
     {
         id:4,
-        name:"Official Event",
+        name:"Event for Offices",
         imageSrc: c4,
         form:'/register/official'
     },

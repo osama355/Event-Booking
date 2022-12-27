@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroBg from "../assests/couples.svg";
-// import { heroData } from "../utils/data";
 import MainContainer from "../components/MainContainer";
 import Footer from "../components/Footer";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
         id="home"
       >
         <div className="py-2 px-7 flex flex-col items-start justify-center flex-1 gap-5">
-          <p className="text-[2.5rem] lg:text-[3rem] font-bold tracking-wide text-headingColor">
+          <p className="text-[2.5rem] lg:text-[3rem] font-bold tracking-wide text-textColor">
             Online Wedding Planning Assistant
             <span className="text-orange-600 text-[3rem] lg:text-[4rem]"></span>
           </p>
@@ -32,10 +33,10 @@ function Home() {
           </Link>
         </div>
         {/* p-4 */}
-        <div className="py-2 px-7 flex-1 flex items-center relative">
+        <div className="py-2 px-7 h-96 flex-1 flex items-center relative">
           <img
             src={HeroBg}
-            className="ml-auto h-420 w-full lg:w-auto lg:h-505"
+            className="ml-auto h-full w-full"
             alt="hero-bg"
           />
         </div>

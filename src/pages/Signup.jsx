@@ -25,8 +25,8 @@ const Signup = () => {
         console.log(user);
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
+        setError(errorMessage);
       });
   };
 
@@ -72,7 +72,7 @@ const Signup = () => {
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
+            id="conpassword"
             type="password"
             placeholder="********"
             value={formData.confirmPassword}

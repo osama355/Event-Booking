@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Logo from "../assests/brandlogo.png";
 import Avatar from "../assests/avatar.png";
 import { MdAdd, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-// import { useStateValue } from "../context/stateProvider";
-// import { actionType } from "../context/reducer";
+import { auth } from "../firebase.config";
+import { signOut } from "firebase/auth";
+import { AuthContext } from "../context/AuthContext";
 
 function Navbar() {
-  const [menu, setMenu] = useState(false);
   const location = useLocation();
+  const {user}=useContext(AuthContext);
+  const handleSignout = (e) => {
+    e.preventDefault()
+    signOut(auth)
+      .then(() => {
+        console.log("User Signout");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <header className="fixed z-50 w-screen p-3 px-4 md:p-3 md:px-7 bg-white">
@@ -28,8 +39,10 @@ function Navbar() {
           >
             <Link
               to="/"
-              className={`text-base hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer ${
-                location.pathname === "/" ? "border-b-4 text-btnback" : "text-textColor"
+              className={`text-base duration-100 transition-all ease-in-out cursor-pointer ${
+                location.pathname === "/"
+                  ? "border-b-4 text-btnback"
+                  : "text-textColor"
               }`}
             >
               Home
@@ -47,7 +60,7 @@ function Navbar() {
             </Link>
             <Link
               to="/services"
-              className={`text-base hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer ${
+              className={`text-base duration-100 transition-all ease-in-out cursor-pointer ${
                 location.pathname === "/services"
                   ? "border-b-4 text-btnback"
                   : "text-textColor"
@@ -55,10 +68,31 @@ function Navbar() {
             >
               Services
             </Link>
+            { !!user ? (
+              <div>
+                <button onClick={handleSignout}>Logout</button>
+              </div>
+            ) : (
+              <div className="flex w-32 flex-row justify-between">
+                <Link
+                  to="login"
+                  className="cursor-pointer transition-all ease-out text-base"
+                >
+                  Login
+                </Link>
+                <p>|</p>
+                <Link
+                  to="signup"
+                  className="cursor-pointer transition-all ease-out text-base"
+                >
+                  Register
+                </Link>
+              </div>
+            )}
           </motion.ul>
 
           <div className="relative">
-            <motion.img
+            {/* <motion.img
               whileTap={{ scale: 0.6 }}
               src={Avatar}
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
@@ -84,7 +118,7 @@ function Navbar() {
                   SingIn <MdLogout />
                 </Link>
               </motion.div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
